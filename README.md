@@ -22,7 +22,7 @@ The goal is to prepare tidy data that can be used for later analysis.
 
 ##Steps how to create tidy data set
 
-1. Download the data [source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
+1. Download the data [source] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
 2. Put run_analysis.R in the parent folder of UCI HAR Dataset
 3. Set it as your working directory using setwd() function in RStudio.
 4. Run source("run_analysis.R")
