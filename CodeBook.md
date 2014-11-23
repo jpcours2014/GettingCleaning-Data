@@ -43,7 +43,7 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
-The set of variables that were estimated from these signals are:
+The set of variables estimated from these signals are:
 
     mean(): Mean value
     std(): Standard deviation
@@ -63,9 +63,17 @@ The set of variables that were estimated from these signals are:
     bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
     angle(): Angle between some vectors.
 
-No unit of measures is reported as all features were normalized and bounded within [-1,1].
+
 
 
 ## Transformation details
+The raw data sets are processed with run_analisys.R script to create a tidy data set in the following steps:
+1. Merge the training and the test sets to create one data set.
+Test and training data (X_train.txt, X_test.txt), subject ids (subject_train.txt, subject_test.txt) and activity ids (y_train.txt, y_test.txt) are merged to obtain a single data set. Variables are labelled with the names assigned by original collectors (features.txt).
+2. Extract only the measurements on the mean and standard deviation for each measurement.
+From the merged data set is extracted and intermediate data set with only the values of estimated mean (variables with labels that contain "mean") and standard deviation (variables with labels that contain "std").
+3. Use descriptive activity names to name the activities in the data set
+4. Label the data set with descriptive activity names.
+5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
