@@ -68,12 +68,17 @@ The set of variables estimated from these signals are:
 
 ## Transformation details
 The raw data sets are processed with run_analisys.R script to create a tidy data set in the following steps:
+
 1. Merge the training and the test sets to create one data set.
 Test and training data (X_train.txt, X_test.txt), subject ids (subject_train.txt, subject_test.txt) and activity ids (y_train.txt, y_test.txt) are merged to obtain a single data set. Variables are labelled with the names assigned by original collectors (features.txt).
+
 2. Extract only the measurements on the mean and standard deviation for each measurement.
 From the merged data set is extracted and intermediate data set with only the values of estimated mean (variables with labels that contain "mean") and standard deviation (variables with labels that contain "std").
+
 3. Use descriptive activity names to name the activities in the data set
+
 4. Label the data set with descriptive activity names.
+
 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
