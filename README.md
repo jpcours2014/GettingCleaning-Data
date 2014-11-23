@@ -7,9 +7,9 @@ The goal is to prepare tidy data that can be used for later analysis.
 ##Repository files description
 
 * __CodeBook.md__:  A code book that describes the variables, the data, and any transformations or work  performed to clean up the data
-    LICENSE: license terms for text and code
-    README.md: this file
-    run_analysis.R: R script to transform raw data set in a tidy one
+* __LICENSE__: license terms for text and code
+* __README.md__:this file
+* __run_analysis.R__: R script to transform raw data set in a tidy one
 
 
 ##R script called run_analysis.R  does the following:
@@ -22,6 +22,7 @@ The goal is to prepare tidy data that can be used for later analysis.
 
 ##Steps how to create tidy data set
 
-    Download the data [source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
-    Put run_analysis.R in the parent folder of UCI HAR Dataset, then set it as your working directory using setwd() function in RStudio.
-    Run source("run_analysis.R")
+1. Download the data [source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
+2. Put run_analysis.R in the parent folder of UCI HAR Dataset
+3. Set it as your working directory using setwd() function in RStudio.
+4. Run source("run_analysis.R")
