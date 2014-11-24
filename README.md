@@ -7,7 +7,6 @@ The goal is to prepare tidy data that can be used for later analysis.
 ##Repository files description
 
 * __CodeBook.md__:  A code book that describes the variables, the data, and any transformations or work  performed to clean up the data
-* __LICENSE__: license terms for text and code
 * __README.md__:this file
 * __run_analysis.R__: R script to transform raw data set in a tidy one
 
