@@ -35,7 +35,30 @@ names(all_data) <- all_labels
 all_data<-all_data[,grepl("mean|std|Subject|ActivityId", names(all_data))]
 
 ## 3. Uses descriptive activity names to name the activities in the data set
+all_data <- join(all_data, activity_labels, by = "ActivityId", match = "first")
+all_data <- all_data[,-1]
 
 ## 4. Appropriately labels the data set with descriptive activity names.
+colNames<-colnames(all_data) 
+for (i in 1:length(colNames))
+{
+colNames[i] = gsub("\\()","",colNames[i])
+colNames[i] = gsub("-std$","StdDev",colNames[i])
+colNames[i] = gsub("-mean","Mean",colNames[i])
+colNames[i] = gsub("^(t)","time",colNames[i])
+colNames[i] = gsub("^(f)","freq",colNames[i])
+colNames[i] = gsub("([Gg]ravity)","Gravity",colNames[i])
+colNames[i] = gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
+colNames[i] = gsub("[Gg]yro","Gyro",colNames[i])
+colNames[i] = gsub("AccMag","AccMagnitude",colNames[i])
+colNames[i] = gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude",colNames[i])
+colNames[i] = gsub("JerkMag","JerkMagnitude",colNames[i])
+colNames[i] = gsub("GyroMag","GyroMagnitude",colNames[i])
+};
+
+colnames(all_data) = colNames;
+
 
 ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+tidy_data<-ddply(all_data, c("Subject","Activity"), numcolwise(mean))
+write.table(tidy_data, "tidy_data.txt", sep="\t")
